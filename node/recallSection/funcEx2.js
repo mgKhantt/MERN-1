@@ -1,18 +1,20 @@
+//this is no argument function
 function noArgumentFunction() {
     console.log("this is no argument function");
 }
 
-function argumentFunction(num1, num2) {
+//this is argument function
+function argumentFunction(num1, num2) { //function declaration မှာဆိုရင် argument လို့ခေါ်တယ်။
     const sum = num1 + num2
     console.log(sum);
     
 }
 
 noArgumentFunction()
-argumentFunction(10, 20)
+argumentFunction(10, 20) //function call မှာဆို paramenter လို့ခေါ်တယ်။
 
 
-console.log("=======");
+console.log("==== Assigment ===");
 
 function addThreeNumber() {
     const num1 = 10

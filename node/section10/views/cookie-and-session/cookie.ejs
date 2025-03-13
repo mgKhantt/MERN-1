@@ -1,0 +1,41 @@
+<%- contentFor('style') %>
+<style>
+    body {
+        background-color: <%= website_color %>;
+    }
+</style>
+
+<%- contentFor('body') %>
+<div class="container p-3 border rounded bg-light">
+    <h3 style="color: <%= header_color %>;" class="text-center">
+        <%= pageTitle %>
+    </h3>
+    <h5>This is Cookie without Expiration</h5>
+    <form action="/session-and-cookie/cookie/create/without-expiration" method="post">
+        <div class="mb-3">
+            <label class="form-label">Website Color</label>
+            <input type="text" class="form-control" name="website_color">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Create Cookie</button>
+        </div>
+    </form>
+    <hr>
+
+    <form action="/session-and-cookie/cookie/create/with-expiration" method="post">
+        <div class="mb-3">
+            <label class="form-label">Header Color</label>
+            <input type="text" class="form-control" name="header_color">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Create Cookie</button>
+        </div>
+    </form>
+    <hr>
+
+    <form action="/session-and-cookie/cookie/clear" method="post">
+        <button class="btn btn-danger">Clear Cookie</button>
+    </form>
+</div>
+
+<%- contentFor('script') %>

@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Amazon</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- Starter -->
+                        <li><span class="dropdown-item bg-secondary text-white">Starter</a></li>
+                        <li><a class="dropdown-item" href="/">Home</a></li>
+                        <li><a class="dropdown-item" href="/page1">Page1</a></li>
+                        <li><a class="dropdown-item" href="/page2">Page2</a></li>
+                        <li><a class="dropdown-item" href="/page3">Page3</a></li>
+                        <li><a class="dropdown-item" href="/page4">Page4</a></li>
+                        <!-- Starter -->
+
+                        <!-- Routing -->
+                        <li><span class="dropdown-item bg-secondary text-white">Routing</a></li>
+                        <li><a class="dropdown-item" href="/routing/view-only">View Only</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/routing/route-para/none/none">Route Para</a></li>
+                        <li><a class="dropdown-item" href="/routing/middleware">Middleware</a></li>
+                        <!-- Routing -->
+
+                        <!-- Cookie and Session -->
+                        <li><span class="dropdown-item bg-secondary text-white">Cookie and Session</a></li>
+                        <li><a class="dropdown-item" href="/session-and-cookie/session">Session</a></li>
+                        <li><a class="dropdown-item" href="/session-and-cookie/cookie">Cookie</a></li>
+                        <!-- Cookie and Session -->
+
+                        <!-- Add to cart list -->
+                        <!-- <li><a class="dropdown-item" href="/product-list">Product List</a></li> -->
+                        <!-- Add to cart list -->
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/product-list" class="nav-link">
+                        <i class="fa-solid fa-cubes"></i> Products
+                    </a>
+                </li>
+                <li class="nav-item position-relative">
+                    <a href="/cart-list" class="nav-link position-relative">
+                        <i class="fa-solid fa-cart-shopping"></i> Cart
+                        <span class="badge-custom">
+                            <%= totalQuantity %>
+                        </span>
+                    </a>
+                </li>
+                
+                
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

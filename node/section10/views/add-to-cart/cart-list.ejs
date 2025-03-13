@@ -1,0 +1,74 @@
+<%- contentFor('style') %>
+    <style>
+        h3 {
+            color: green;
+        }
+    </style>
+
+    <%- contentFor('body') %>
+        <div class="container pt-3">
+            <div class="d-flex justify-content-between">
+                <h3>
+                    <%= pageTitle %>
+                </h3>
+                <h4>Total Price: 
+                    <span class="text-warning">
+                        $<%= cartItems.reduce((total, item) => total + (item.price * item.quantity), 0) %>
+                    </span>
+                </h4>
+                              
+            </div>
+
+            <div class="row">
+                <% for (const cartItem of cartItems) { %>
+                    <div class="card mb-3 col-12">
+                        <div class="row">
+                            <div class="col-md-2 text-center">
+                                <img src="<%= cartItem.image %>" class="img-fluid rounded-start" alt="..."
+                                    style="height: 150px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-5 bg-info">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-3 text-light">
+                                        <%= cartItem.name %>
+                                    </h5>
+                                    <p class="card-text">
+                                        Price : $<%= cartItem.price %>
+                                        <br>
+                                        Quantity: <%= cartItem.quantity %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 border-end border-dark-subtle">
+                                <h4>Total Price</h4>
+                                <p>$<%= cartItem.price * cartItem.quantity %></p>
+                            </div>
+                            <div class="col-md-3 d-flex flex-column justify-content-evenly text-center">
+                                <form action="/cart-list/update-item" method="post">
+                                    <input type="hidden" name="id" value="<%= cartItem.id %>">
+                                    <input type="hidden" name="action" value="plus">
+                                    <button class="btn btn-primary w-75">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </form>
+                                <form action="/cart-list/update-item" method="post">
+                                    <input type="hidden" name="id" value="<%= cartItem.id %>">
+                                    <input type="hidden" name="action" value="minus">
+                                    <button class="btn btn-secondary w-75">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                </form>
+                                <form action="/cart-list/delete-cart-item" method="post">
+                                    <input type="hidden" name="id" value="<%= cartItem.id %>">
+                                    <button class="btn btn-danger w-75">
+                                        <i class="fa-solid fa-trash"></i> Delete items
+                                    </button>
+                                </form>
+                            </div>                            
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+
+        <%- contentFor('script') %>

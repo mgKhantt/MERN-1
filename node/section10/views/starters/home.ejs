@@ -1,0 +1,23 @@
+<%- contentFor('style') %>
+<style>
+    h3 {
+    color: blue;
+}
+</style>
+
+<%- contentFor('body') %>
+<div class="container pt-3">
+    <h3>
+        <%= pageTitle %>
+    </h3>
+    <ul class="list-group text-center">
+        <% for(let list of lists1) { %>
+            <li class="list-group-item">
+                <%= list %>
+            </li>
+        <% } %>
+    </ul>
+</div>
+
+<%- contentFor('script') %>
+<script>alert("Hello")</script>

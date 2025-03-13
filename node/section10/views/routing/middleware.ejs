@@ -1,0 +1,26 @@
+<%- contentFor('style') %>
+<style>
+    h3 {
+        color: green;
+    }
+</style>
+
+<%- contentFor('body') %>
+<div class="container p-3 text-center">
+    <h3 class="p-4 rounded">
+        <%= pageTitle %>
+    </h3>
+    <div class="border border-danger p-3 rounded">
+        <form action="/routing/middleware" method="post">
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input type="text" class="form-control" name="age">
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <hr>
+    <h4 class="text-danger"><%= message %></h4>
+</div>
+
+<%- contentFor('script') %>

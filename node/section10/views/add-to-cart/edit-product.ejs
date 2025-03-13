@@ -1,0 +1,40 @@
+<%- contentFor('style') %>
+    <style>
+        h3 {
+            color: green;
+        }
+    </style>
+
+    <%- contentFor('body') %>
+        <div class="container pt-3">
+            <h3>
+                <%= pageTitle %>
+            </h3>
+            <hr>
+
+            <a href="/product-list" class="btn btn-primary mb-2">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                Back
+            </a>
+            
+            <form action="/product-list/edit-product" method="post">
+                <input type="hidden" name="id" value="<%= product._id %>">
+                <div class="mb-3">
+                    <label class="form-label">Image</label>
+                    <input type="text" class="form-control" name="image" value="<%= product.image %>" required autofocus>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= product.name %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" name="price" value="<%= product.price %>" required>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+
+        <%- contentFor('script') %>

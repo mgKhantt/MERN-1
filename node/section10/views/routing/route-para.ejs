@@ -1,0 +1,32 @@
+<%- contentFor('style') %>
+<style>
+    h3 {
+        color: <%= color %>;
+        background-color: <%= bgColor %>;
+    }
+</style>
+
+<%- contentFor('body') %>
+<div class="container p-3 text-center">
+    <h3 class="p-4 rounded">
+        <%= pageTitle %>
+    </h3>
+    <div class="border border-danger p-3 rounded">
+        <form action="/routing/route-para" method="post">
+            <div class="mb-3">
+                <label class="form-label">Color</label>
+                <input type="text" class="form-control" name="color">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Background Color</label>
+                <input type="text" class="form-control" name="bgColor">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- contentFor('script') %>
+<script>alert("Hello")</script>
